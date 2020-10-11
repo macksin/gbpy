@@ -13,7 +13,9 @@ def main():
         lines = [hex(line) for line in lines] # read in hex
 
     # game title
-    TITLE = [chr(int(char, 0)) for char in lines[int(0x134):int(0x14c)]]
+    title_init = int(0x134)
+    title_end = int(0x14c)
+    TITLE = [chr(int(char, 0)) for char in lines[title_init:title_end]]
     TITLE = "".join(TITLE)
     print("Game Title (location $0134-$014c) = '{}'".format(TITLE));
 
